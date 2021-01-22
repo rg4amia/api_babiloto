@@ -141,7 +141,7 @@ class TiragesSeeder extends Seeder
                 ]
             ],
             [
-                'jour'      => 'dimance',
+                'jour'      => 'dimanche',
                 'tirage'    => [
                     [
                         'heure'  => '10h',

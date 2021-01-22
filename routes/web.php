@@ -14,9 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['prefix' => 'paris', 'as' => 'paris.'], function () {
+    Route::get('/generate', [App\Http\Controllers\ParisController::class, 'index'])->name('index');
+    Route::post('/store', [App\Http\Controllers\ParisController::class, 'store'])->name('store');
+});
+
